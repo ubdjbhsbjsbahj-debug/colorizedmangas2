@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 34
+    
+    defaultConfig {
+        minSdk 21
+        targetSdk 34
+        
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
+    namespace = "eu.kanade.tachiyomi.extension.en.colorizedmangas"
+}
+
+dependencies {
+    compileOnly 'com.google.android:android:4.1.1.4'
+    compileOnly 'androidx.appcompat:appcompat:1.6.1'
+    compileOnly 'androidx.constraintlayout:constraintlayout:2.1.4'
+    compileOnly 'com.google.code.gson:gson:2.8.9'
+    compileOnly 'com.squareup.okhttp3:okhttp:4.10.0'
+    
+    // Tachiyomi source dependencies
+    compileOnly "eu.kanade.tachiyomi:core:0.0.0-stub"
+}
